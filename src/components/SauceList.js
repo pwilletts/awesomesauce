@@ -9,6 +9,7 @@ class SauceList extends React.Component {
 					<ListItem
 						history={this.props.history}
 						sauce={this.props.sauce}
+						onSelect={this.props.onSelect}
 					/>
 				</ul>
 			</div>

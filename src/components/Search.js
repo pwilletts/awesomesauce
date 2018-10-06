@@ -24,18 +24,26 @@ class Search extends React.Component{
         })
     }
 
+    onSelect = (e, sauce) => {
+        this.props.history.push(`/detail/${sauce.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase()}`);
+        this.setState({searchResults: null}, function(){
+            document.getElementById('searchTerm').value = '';
+        })
+    }
+
     render(){
         return(
             <div className="search">
 				<label>Search Sauces</label>
-                <input onChange={this.onSearch.bind(this)}/>
+                <input id="searchTerm" onChange={this.onSearch.bind(this)}/>
 				{this.state.searchResults ? this.state.searchResults.sort((a, b) => a.likes > b.likes ? -1 : 1).map(
 					sauce => {
 						return (
 							<SauceList
 								history={this.props.history}
 								sauce={sauce}
-								text={"Search Results"}
+                                text={"Search Results"}
+                                onSelect={this.onSelect.bind(this)}
                             />
 						)
 					}

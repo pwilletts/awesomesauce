@@ -1,13 +1,9 @@
 import React from 'react';
 
 class ListItem extends React.Component {
-    // route(event, sauce){
-    //     this.props.history.push(`/detail/${sauce.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase()}`);
-    // }
-
 	render() {
 		return(
-            <li className="grid-x grid-margin-x" onClick={(e) => this.route(e, this.props.sauce)} key={this.props.sauce.name}>
+            <li id={'ListItem'} className="grid-x grid-margin-x" onClick={(e) => this.props.onSelect(e, this.props.sauce)} key={this.props.sauce.name}>
                 <div className="cell small-3">
                     <img src={this.props.sauce.image} alt={this.props.sauce.name} style={{maxHeight: '60px'}} />
                 </div>

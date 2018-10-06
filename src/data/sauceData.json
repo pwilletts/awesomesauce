@@ -1,8 +1,144 @@
-[{"_id":"5b01d99360b4261e1bade378","manufacturer":"Melinda's","name":"Ghost Pepper Sauce","peppers":["Naga Jolokia","Ghost Pepper"],"mfrLink":"https://melindas.com/product/melindas-ghost-pepper-hot-sauce/","rating":"4.5","heatIndex":"3.5","likes":"346","dislikes":"27","description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.","image":"https://melindas.com/wp-content/uploads/2015/05/Mel_Ghost_700.png","foods":["carne asada","tuna"]},
-{"_id":"5b01d9af60b4261e1bade386","manufacturer":"Melinda's","name":"Original Habanero Pepper Sauce","mfrLink":"https://melindas.com/product/melindas-original-habanero-extra-hot-sauce/","peppers":["Habanero"],"rating":"4.8","heatIndex":"3.1","likes":"459","dislikes":"25","description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.","image":"https://melindas.com/wp-content/uploads/2015/05/Mel_Hot_PicHR_700.png","foods":["carne asada","tuna"]},
-{"_id":"5b01d9c360b4261e1bade38e","manufacturer":"CaJohn's Fiery Foods","name":"Smokin Ed's Carolina Reaper Hot Sauce - Sling Blade","mfrLink":"http://cajohns.com/store/index.php?route=product/product&path=59_153&product_id=202","peppers":["Carolina Reaper","Bhut Jolokia"],"rating":"3.7","heatIndex":"4.6","likes":"270","dislikes":"68","description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.","image":"https://melindas.com/wp-content/uploads/2015/05/Mel_Hot_PicHR_700.png","foods":["carne asada","tuna"]},
-{"_id":"5b01d9e260b4261e1bade394","manufacturer":"CaJohn's Fiery Foods","name":"CaJohn's Select Puree- Fatalii","mfrLink":"https://www.hotsaucedepot.com/cajohns-select-puree-fatalii-5oz/","peppers":["Fatalii"],"rating":"4.2","heatIndex":"4.8","likes":"156","dislikes":"39","description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.","image":"https://images-na.ssl-images-amazon.com/images/I/41%2BsUhA2JWL._SY450_.jpg","foods":["carne asada","tuna"]},
-{"_id":"5b0744e960b4266ee38b0842","manufacturer":"Outer Limits Hot Sauce","name":"Ghost Pepper & Roasted Garlic","mfrLink":"https://www.outerlimitshotsauce.com/product-page/ghost-pepper-and-roasted-garlic-hot-sauce-5-oz","peppers":["Ghost Pepper"],"rating":"4.7","heatIndex":"4.6","likes":"256","dislikes":"39","description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.","image":"https://cdn.shopify.com/s/files/1/0645/7913/products/GhostOL_2048x.JPG","foods":["carne asada","tuna"]},
-{"_id":"5b07625960b4266ee38b1840","manufacturer":"Yellowbird Condiment","name":"Habanero Condiment","mfrLink":"https://yellowbirdsauce.com/product/yellowbird-habanero-condiment-19-oz/","peppers":["Habanero"],"rating":"3.8","heatIndex":"3.6","likes":"177","dislikes":"58","description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.","image":"https://i2.wp.com/yellowbirdsauce.com/wp-content/uploads/2017/11/Yellowbird-Habanero-Condiment-19-oz.jpg","foods":["carne asada","tuna"]},
-{"_id":"5b07630c60b4266ee38b18a5","manufacturer":"Bigfat's","name":"6o8 Pineapple Habanero Hot Sauce","mfrLink":"http://www.bigfatshotsauce.com/bigfats-6o8-pineapple-habanero-hot-sauce/","peppers":["Habanero"],"rating":"3.7","heatIndex":"3.9","likes":"155","dislikes":"66","description":"Winner of the 2012 Lenny Award for best Fruit Based Hot Sauce from ILoveItSpicy.com! Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.","image":"http://cdn8.bigcommerce.com/s-ek6xj/images/stencil/1280x1280/products/81/340/6o8_new_crop__98125.1523995515.jpg","foods":["carne asada","tuna"]}
+[
+   {
+      "_id":"5b01d99360b4261e1bade378",
+      "manufacturer":"Melinda's",
+      "name":"Ghost Pepper Sauce",
+	  "searchName": "ghost pepper sauce",
+      "peppers":[
+         "Naga Jolokia",
+         "Ghost Pepper"
+      ],
+      "mfrLink":"https://melindas.com/product/melindas-ghost-pepper-hot-sauce/",
+      "rating":"4.5",
+      "heatIndex":"3.5",
+      "likes":"346",
+      "dislikes":"27",
+      "description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.",
+      "image":"https://melindas.com/wp-content/uploads/2015/05/Mel_Ghost_700.png",
+      "foods":[
+         "carne asada",
+         "tuna"
+      ]
+   },
+   {
+      "_id":"5b01d9af60b4261e1bade386",
+      "manufacturer":"Melinda's",
+      "name":"Original Habanero Pepper Sauce",
+	  "searchName": "original habanero pepper sauce",
+      "mfrLink":"https://melindas.com/product/melindas-original-habanero-extra-hot-sauce/",
+      "peppers":[
+         "Habanero"
+      ],
+      "rating":"4.8",
+      "heatIndex":"3.1",
+      "likes":"459",
+      "dislikes":"25",
+      "description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.",
+      "image":"https://melindas.com/wp-content/uploads/2015/05/Mel_Hot_PicHR_700.png",
+      "foods":[
+         "carne asada",
+         "tuna"
+      ]
+   },
+   {
+      "_id":"5b01d9c360b4261e1bade38e",
+      "manufacturer":"CaJohn's Fiery Foods",
+      "name":"Smokin Ed's Carolina Reaper Hot Sauce - Sling Blade",
+	  "searchName": "smokin eds carolina reaper hot sauce sling blade",
+      "mfrLink":"http://cajohns.com/store/index.php?route=product/product&path=59_153&product_id=202",
+      "peppers":[
+         "Carolina Reaper",
+         "Bhut Jolokia"
+      ],
+      "rating":"3.7",
+      "heatIndex":"4.6",
+      "likes":"270",
+      "dislikes":"68",
+      "description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.",
+      "image":"https://melindas.com/wp-content/uploads/2015/05/Mel_Hot_PicHR_700.png",
+      "foods":[
+         "carne asada",
+         "tuna"
+      ]
+   },
+   {
+      "_id":"5b01d9e260b4261e1bade394",
+      "manufacturer":"CaJohn's Fiery Foods",
+      "name":"CaJohn's Select Puree- Fatalii",
+	  "searchName": "cajohns select puree fatalii",
+      "mfrLink":"https://www.hotsaucedepot.com/cajohns-select-puree-fatalii-5oz/",
+      "peppers":[
+         "Fatalii"
+      ],
+      "rating":"4.2",
+      "heatIndex":"4.8",
+      "likes":"156",
+      "dislikes":"39",
+      "description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.",
+      "image":"https://images-na.ssl-images-amazon.com/images/I/41%2BsUhA2JWL._SY450_.jpg",
+      "foods":[
+         "carne asada",
+         "tuna"
+      ]
+   },
+   {
+      "_id":"5b0744e960b4266ee38b0842",
+      "manufacturer":"Outer Limits Hot Sauce",
+      "name":"Ghost Pepper & Roasted Garlic",
+	  "searchName": "ghost pepper roasted garlic",
+      "mfrLink":"https://www.outerlimitshotsauce.com/product-page/ghost-pepper-and-roasted-garlic-hot-sauce-5-oz",
+      "peppers":[
+         "Ghost Pepper"
+      ],
+      "rating":"4.7",
+      "heatIndex":"4.6",
+      "likes":"256",
+      "dislikes":"39",
+      "description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.",
+      "image":"https://cdn.shopify.com/s/files/1/0645/7913/products/GhostOL_2048x.JPG",
+      "foods":[
+         "carne asada",
+         "tuna"
+      ]
+   },
+   {
+      "_id":"5b07625960b4266ee38b1840",
+      "manufacturer":"Yellowbird Condiment",
+      "name":"Habanero Condiment",
+	  "searchName": "habanero condiment",
+      "mfrLink":"https://yellowbirdsauce.com/product/yellowbird-habanero-condiment-19-oz/",
+      "peppers":[
+         "Habanero"
+      ],
+      "rating":"3.8",
+      "heatIndex":"3.6",
+      "likes":"177",
+      "dislikes":"58",
+      "description":"Description lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut turpis sed ligula interdum luctus in ac ligula. Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.",
+      "image":"https://i2.wp.com/yellowbirdsauce.com/wp-content/uploads/2017/11/Yellowbird-Habanero-Condiment-19-oz.jpg",
+      "foods":[
+         "carne asada",
+         "tuna"
+      ]
+   },
+   {
+      "_id":"5b07630c60b4266ee38b18a5",
+      "manufacturer":"Bigfat's",
+      "name":"6o8 Pineapple Habanero Hot Sauce",
+	  "searchName": "6o8 pineapple habanero hot sauce",
+      "mfrLink":"http://www.bigfatshotsauce.com/bigfats-6o8-pineapple-habanero-hot-sauce/",
+      "peppers":[
+         "Habanero"
+      ],
+      "rating":"3.7",
+      "heatIndex":"3.9",
+      "likes":"155",
+      "dislikes":"66",
+      "description":"Winner of the 2012 Lenny Award for best Fruit Based Hot Sauce from ILoveItSpicy.com! Sed fermentum egestas enim ac scelerisque. Mauris placerat at sapien quis fringilla. Mauris ut ante quis justo maximus commodo.",
+      "image":"http://cdn8.bigcommerce.com/s-ek6xj/images/stencil/1280x1280/products/81/340/6o8_new_crop__98125.1523995515.jpg",
+      "foods":[
+         "carne asada",
+         "tuna"
+      ]
+   }
 ]

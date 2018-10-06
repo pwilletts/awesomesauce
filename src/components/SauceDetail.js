@@ -3,10 +3,10 @@ import SauceStats from './SauceStats';
 
 class SauceDetail extends React.Component{
     getSauceDetails(){
-        return this.props.sauces.find(a => a.name.replace(/[\W\s]/gi, '') === this.props.match.params.sauceName.replace(/[\W\s]/gi, ''))
+        return this.props.sauces.find(a => a.searchName.replace(/[^\w\s]/gi, '').toUpperCase() === this.props.match.params.sauceName.replace(/-/gi, ' ').toUpperCase())
     }
 
-    formDetailHtml(sauce){
+    formDetailHtml(){
         var sauce = this.getSauceDetails();
         return <div>
             <div className="cell medium-3"> 
