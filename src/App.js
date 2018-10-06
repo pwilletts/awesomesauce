@@ -4,7 +4,7 @@ import AppHeader from './components/AppHeader';
 import Search from './components/Search';
 import ScrollList from './components/ScrollList';
 import SauceDetail from './components/SauceDetail';
-import PopularSauces from './components/PopularSauces';
+import Sauces from './components/Sauces';
 const data = require('./data/sauceData.json');
 
 class App extends React.Component {
@@ -24,13 +24,13 @@ class App extends React.Component {
                 <ScrollList {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>
-            <Route exact path='/popular' render={(props) => 
+            <Route path='/sauces/:filter?' render={(props) => 
               <div>
                 <Search sauces={this.state.sauces}/>
-                <PopularSauces {...props} sauces={this.state.sauces}/>
+                <Sauces {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>
-            <Route exact path='/detail/:sauceName' render={(props) => 
+            <Route path='/detail/:sauceName' render={(props) => 
               <div>
                 <Search sauces={this.state.sauces}/>
                 <SauceDetail {...props} sauces={this.state.sauces}/>
