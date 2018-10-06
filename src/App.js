@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import AppHeader from './components/AppHeader';
+import Search from './components/Search';
+import PopularSauces from './components/PopularSauces';
+import SauceDetail from './components/SauceDetail';
+const data = require('./data/sauceData.json');
 
-class App extends Component {
+class App extends React.Component {
+  state = {
+    sauces: data
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <AppHeader/>
+        <Search sauces={this.state.sauces}/>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path='/'>
+              <PopularSauces sauces={this.state.sauces}/>
+            </Route>
+            <Route exact path='/detail/:sauceName' render={(props) => <SauceDetail {...props} sauces={this.state.sauces}/>}>
+              
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
