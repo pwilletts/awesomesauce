@@ -17,14 +17,12 @@ class PopularSauces extends React.Component{
         return(
             <div>
                 <h2>Popular Sauces</h2>
-                <ul className="sauce-list" style={{textAlign: 'center', listStyleType: 'none'}}>
+                <ul className="scroll-list what-is-this" style={{textAlign: 'center', listStyleType: 'none'}}>
                     {this.sortSauces().map(
                         sauce => {
                             return(
-                                <li key={sauce.name} onClick={(e) => this.onSelect(e, sauce, 'ListItem')} style={{backgroundImage: `url(${sauce.image})`}} className="short-list">
-									<div className="aligner">
-										<p><strong>{sauce.name}</strong></p>
-									</div>
+                                <li key={sauce.name} onClick={(e) => this.onSelect(e, sauce, 'ListItem')} className="short-list">
+									<p><strong>{sauce.name}</strong></p>
 								</li>
                             )
                         }
