@@ -9,7 +9,7 @@ class PopularSauces extends React.Component{
 
     onSelect = (e, sauce, context) => {
         if(e.target.id === 'viewAll'){
-            this.props.history.push(`/popular`);
+            this.props.history.push(`/sauces/popular`);
         } else if (context === 'ListItem') {
             this.props.history.push(`/detail/${sauce.searchName.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase()}`);
         }       

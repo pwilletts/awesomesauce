@@ -11,6 +11,7 @@ class Sauces extends React.Component{
     }
 
     changeFilter= (e) => {
+        console.log(e.target.value)
         this.props.history.push(`/sauces/${e.target.value}`);
     }
 

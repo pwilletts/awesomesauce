@@ -25,6 +25,7 @@ class Search extends React.Component{
     }
 
     onSelect = (e, sauce) => {
+        console.log(this.props.history);
         this.props.history.push(`/detail/${sauce.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase()}`);
         this.setState({searchResults: null}, function(){
             document.getElementById('searchTerm').value = '';

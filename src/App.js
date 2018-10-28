@@ -14,7 +14,6 @@ library.add(faChevronRight)
 
 const data = require('./data/sauceData.json');
 
-
 class App extends React.Component {
   state = {
     sauces: data
@@ -34,13 +33,13 @@ class App extends React.Component {
             </Route>
             <Route path='/sauces/:filter?' render={(props) => 
               <div>
-                <Search sauces={this.state.sauces}/>
+                <Search {...props} sauces={this.state.sauces}/>
                 <Sauces {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>
             <Route path='/detail/:sauceName' render={(props) => 
               <div>
-                <Search sauces={this.state.sauces}/>
+                <Search {...props} sauces={this.state.sauces}/>
                 <SauceDetail {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>
