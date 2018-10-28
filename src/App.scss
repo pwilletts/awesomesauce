@@ -1,3 +1,7 @@
+// Colors //
+$redColor: #E02706;
+
+
 body, h1, h2, h3, h4, h5, h6, p, a {
 	font-family: 'Roboto Condensed', sans-serif;
 	color: #4E4E4E;
@@ -15,7 +19,7 @@ h2 {
 }
 
 header {
-	border-top: #E02706 5px solid;
+	border-top: $redColor 5px solid;
 	padding: 20px 30px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 	background-color: #fff;
@@ -42,7 +46,7 @@ div.search {
 	}
 	input {
 		width: 100%;
-		border-bottom: #E02706 1px solid;
+		border-bottom: $redColor 1px solid;
 		border-top: none;
 		border-right: none;
 		border-left: none;
@@ -50,15 +54,15 @@ div.search {
 		outline: none;
 		font-size: 24px;
 		font-weight: bold;
-		color: #E02706;
+		color: $redColor;
 	}
 	ion-icon {
-		position: absolute;
-		right: 0;
-		top: 20px;
-		color: #E02706;
-		font-size: 1.5rem;
-	}
+	position: absolute;
+	right: 0;
+	top: 20px;
+	color: $redColor;
+	font-size: 1.5rem;
+}
 }
 
 
@@ -117,7 +121,24 @@ ul.scroll-list {
 		width: 133px;
 		float: left;
 		margin-right: 40px;
-		background-size: cover;
+		// background-size: cover;
+		background-position: center;
+		display: flex;
+		align-items: center;
+		margin: 0 40px 40px 0;
+		box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+		overflow: hidden;
+		transition: all .2s ease-in-out;
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+		p {
+			padding: 15px;
+			background-color: rgba(255,255,255,.9);
+			line-height: 1;
+			box-shadow: 0px 0px 100px rgba(0,0,0,0.4);
+		}
 	}
 }
 
@@ -143,7 +164,7 @@ button.back-to-list {
 	font-weight: bold;
 	letter-spacing: .5px;
 	margin: 0 0 40px 10px;
-	color: #E02706;
+	color: $redColor;
 	transition: margin .2s;
 	cursor: pointer;
 	padding-left: 24px;
@@ -166,7 +187,7 @@ button .icon {
 	li {
 		text-align: center;
 		&.rating {
-			color: #E02706;
+			color: $redColor;
 			font-size: 2.5rem;
 			font-weight: 100;
 			line-height: 1.2;
