@@ -14,14 +14,19 @@ class PopularSauces extends React.Component{
     }
 
     render(){
+        
+        // var style = {
+        //     backgroundImage: 'url('
+        // }
+
         return(
             <div>
                 <h2>Popular Sauces</h2>
-                <ul className="scroll-list what-is-this" style={{textAlign: 'center', listStyleType: 'none'}}>
+                <ul className="scroll-list" style={{textAlign: 'center', listStyleType: 'none'}}>
                     {this.sortSauces().map(
                         sauce => {
                             return(
-                                <li key={sauce.name} onClick={(e) => this.onSelect(e, sauce, 'ListItem')} className="short-list">
+                                <li key={sauce.name} onClick={(e) => this.onSelect(e, sauce, 'ListItem')} className="short-list" style={{backgroundImage: ${sauce.image}}}>
 									<p><strong>{sauce.name}</strong></p>
 								</li>
                             )
