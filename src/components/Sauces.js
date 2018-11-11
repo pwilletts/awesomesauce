@@ -2,6 +2,13 @@ import React from 'react';
 import SauceList from './SauceList';
 
 class Sauces extends React.Component{
+    onSelect = (e, sauce) => {
+        this.props.history.push(`/detail/${sauce.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase()}`);
+        this.setState({searchResults: null}, function(){
+            document.getElementById('searchTerm').value = '';
+        })
+    }
+
     sortSauces(){
         if(!this.props.match.params.filter || this.props.match.params.filter === ('all'|| '')){
             return this.props.sauces.sort((a,b) => a.searchName > b.searchName)
@@ -11,7 +18,6 @@ class Sauces extends React.Component{
     }
 
     changeFilter= (e) => {
-        console.log(e.target.value)
         this.props.history.push(`/sauces/${e.target.value}`);
     }
 
@@ -31,7 +37,7 @@ class Sauces extends React.Component{
         {this.sortSauces().map(
                 sauce => {
                     return(
-                        <SauceList sauce={sauce}/>
+                        <SauceList sauce={sauce} onSelect={this.onSelect.bind(this)}/>
                     )
                 }
             )}
