@@ -5,6 +5,13 @@ import Search from './components/Search';
 import ScrollList from './components/ScrollList';
 import SauceDetail from './components/SauceDetail';
 import Sauces from './components/Sauces';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+
+// Might move this somewhere else
+library.add(faChevronRight)
+
 const data = require('./data/sauceData.json');
 
 class App extends React.Component {
@@ -26,13 +33,13 @@ class App extends React.Component {
             </Route>
             <Route path='/sauces/:filter?' render={(props) => 
               <div>
-                <Search sauces={this.state.sauces}/>
+                <Search {...props} sauces={this.state.sauces}/>
                 <Sauces {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>
             <Route path='/detail/:sauceName' render={(props) => 
               <div>
-                <Search sauces={this.state.sauces}/>
+                <Search {...props} sauces={this.state.sauces}/>
                 <SauceDetail {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>

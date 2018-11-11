@@ -1,7 +1,7 @@
 import React from 'react';
 import SauceList from './SauceList';
 
-class PopularSauces extends React.Component{
+class Sauces extends React.Component{
     sortSauces(){
         if(!this.props.match.params.filter || this.props.match.params.filter === ('all'|| '')){
             return this.props.sauces.sort((a,b) => a.searchName > b.searchName)
@@ -11,6 +11,7 @@ class PopularSauces extends React.Component{
     }
 
     changeFilter= (e) => {
+        console.log(e.target.value)
         this.props.history.push(`/sauces/${e.target.value}`);
     }
 
@@ -24,7 +25,7 @@ class PopularSauces extends React.Component{
     }
 
     setHtml(){    
-        return <div><h2>Here are our most popular sauces!</h2>
+        return <div><h2>Popular Sauces</h2>
         <button value={this.setText()} onClick={(e) => this.changeFilter(e)}>View {this.setText()} sauces</button>
         <ul className="sauce-list" style={{textAlign: 'center', listStyleType: 'none'}}>
         {this.sortSauces().map(
@@ -45,4 +46,4 @@ class PopularSauces extends React.Component{
     }
 }
 
-export default PopularSauces;
+export default Sauces;
