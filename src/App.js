@@ -31,79 +31,81 @@ const data = require('./data/sauceData.json');
 
 class App extends React.Component {
   state = {
-    sauces: data,
+    sauces: null,
     user: null
   }
 
   componentWillMount(){
+    this.getSauces()
     this.checkAuth()
   }
 
   checkAuth(){
-    const results = [];
-    firebase.auth().onAuthStateChanged(function(user) {
-      db.collection('sauces').get()
+    firebase.auth().onAuthStateChanged(function(user){
+      if(user){
+        this.setState({user: user})
+      } else {
+        this.setState({user: user})
+      }
+    }.bind(this))
+  }
+
+  getSauces(){
+    var results = []
+    db.collection('sauces').get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          results.push({
-            name: doc.name
-          })
+          results.push(doc.data())
         })
-      }).then(() => {
-        console.log(results)
       })
-      
-      if (user) {
-        // User is signed in.
-        var user = firebase.auth().currentUser;
-        return user
-      } else {
-        // No user is signed in.
-        console.log('not signed in')
-        return null
-      }
-    }.bind(this));
+      .then(function(){
+        this.setState({sauces: results})
+      }.bind(this))
   }
 
   stateChange(userInfo){
     this.setState({user: userInfo}, function(){
       console.log(this.state.user)
     })
-}
+  }
 
   render() {
     return (
       <div>
-        <AppHeader user={this.state.user}/>    
         <BrowserRouter>
           <Switch>      
             <Route exact path='/' render={(props) =>
-              <div>
+              this.state.sauces ? <div>
+                <AppHeader {...props} user={this.state.user}/>
                 <Search {...props} sauces={this.state.sauces}/>             
                 <ScrollList {...props} sauces={this.state.sauces}/>
-              </div>}>
+              </div>: '' }>
             </Route>
             <Route path='/admin' render={(props) =>
-              <div>
-                <Admin {...props} stateChange={this.stateChange.bind(this)}/>
-              </div>}>
+              this.state.sauces ? <div>
+                <AppHeader {...props} user={this.state.user}/>
+                <Admin {...props} sauces={this.state.sauces} stateChange={this.stateChange.bind(this)}/>
+              </div> : "Loading"}>
             </Route>
             <Route path='/login' render={(props) =>
               <div>
+                <AppHeader {...props} user={this.state.user}/>
                 <Login {...props} stateChange={this.stateChange.bind(this)}/>
               </div>}>
             </Route>
             <Route path='/sauces/:filter?' render={(props) => 
               <div>
+                <AppHeader {...props} user={this.state.user}/>
                 <Search {...props} sauces={this.state.sauces}/>
                 <Sauces {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>
             <Route path='/detail/:sauceName' render={(props) => 
-              <div>
+              this.state.sauces ? <div>
+                <AppHeader {...props} user={this.state.user}/>
                 <Search {...props} sauces={this.state.sauces}/>
                 <SauceDetail {...props} sauces={this.state.sauces}/>
-              </div>}>
+              </div>: "Loading"}>
             </Route>
           </Switch>
         </BrowserRouter>

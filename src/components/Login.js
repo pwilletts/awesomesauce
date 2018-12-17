@@ -1,51 +1,25 @@
 import React from 'react'
-import bcrypt from 'bcryptjs';
 import firebase from 'firebase'
 
 class Login extends React.Component {
-    constructor(props){
-        super(props)
-
-        this.state = {
-            newUser: false,
-            errorCode: null
-        }
-
-        this.updateUser = this.updateUser.bind(this);
+    state = {
+        newUser: false,
+        error: null
     }
-
-    
 
     login(){
-        firebase.auth().signInWithEmailAndPassword(document.getElementById('userName').value, document.getElementById('password').value).then(function(user) {
-            this.props.history.push('/');
-        }.bind(this))
-    }
+        const username = document.getElementById('username').value
+        const password = document.getElementById('password').value
 
-    create(){
-        firebase.auth().createUserWithEmailAndPassword(document.getElementById('userName').value, document.getElementById('password').value).then(function(user) {
-            this.updateUser()
-        }.bind(this)).catch(function(error){
-            alert(error);
-        })
-    }
-
-    updateUser(){
-        var user = firebase.auth().currentUser;
-        user.updateProfile({
-            displayName: document.getElementById('name').value
-          }).then(function() {
-            // Update successful.
-            this.props.stateChange(firebase.auth().currentUser)
+        firebase.auth().signInWithEmailAndPassword(username, password)
+        .then(function(user){
             this.props.history.push('/')
-          }.bind(this)).catch(function(error) {
-            // An error happened.
-          });
-          
-    }
-
-    stateChange(event){
-        this.setState({newUser: true})
+        }.bind(this))
+        .catch(function(err){
+            var code = err.code
+            var message = err.message
+            this.setState({error: message})
+        }.bind(this))
     }
 
 	render() {
@@ -59,7 +33,7 @@ class Login extends React.Component {
                 </div> : ""}            
 
                 <label>UserName</label>
-                <input id="userName" type='text'></input>
+                <input id="username" type='text'></input>
 
                 <label>Password</label>
                 <input id="password" type='password'></input>
@@ -68,6 +42,8 @@ class Login extends React.Component {
                 <input id="password2" type='password'></input></div> : ""}
 
                 <button onClick={() => this.login()} href="#" class="button">Login</button>
+
+                {this.state.error ? <h5>{this.state.error}</h5> : ""}
 
                 {!this.state.newUser ? <button onClick={(e) => this.stateChange(e)} style={{marginLeft:10}} href="#" class="button">New User?</button>: ""}
 
