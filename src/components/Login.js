@@ -12,14 +12,14 @@ class Login extends React.Component {
         const password = document.getElementById('password').value
 
         firebase.auth().signInWithEmailAndPassword(username, password)
-        .then(function(user){
-            this.props.history.push('/')
-        }.bind(this))
-        .catch(function(err){
-            var code = err.code
-            var message = err.message
-            this.setState({error: message})
-        }.bind(this))
+            .then(function(user){
+                this.props.history.push('/')
+            }.bind(this))
+            .catch(function(err){
+                var code = err.code
+                var message = err.message
+                this.setState({error: message})
+            }.bind(this))
     }
 
 	render() {

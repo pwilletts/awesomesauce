@@ -8,6 +8,7 @@ import SauceDetail from './components/SauceDetail';
 import Sauces from './components/Sauces';
 import Login from './components/Login'
 import Admin from './components/Admin'
+import Signup from './components/Signup'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
@@ -43,7 +44,9 @@ class App extends React.Component {
   checkAuth(){
     firebase.auth().onAuthStateChanged(function(user){
       if(user){
-        this.setState({user: user})
+        this.setState({user: user}, function(){
+          console.log(this.state.user)
+        })
       } else {
         this.setState({user: user})
       }
@@ -81,18 +84,28 @@ class App extends React.Component {
                 <ScrollList {...props} sauces={this.state.sauces}/>
               </div>: '' }>
             </Route>
+
             <Route path='/admin' render={(props) =>
               this.state.sauces ? <div>
                 <AppHeader {...props} user={this.state.user}/>
-                <Admin {...props} sauces={this.state.sauces} stateChange={this.stateChange.bind(this)}/>
+                <Admin {...props} db={db} sauces={this.state.sauces} stateChange={this.stateChange.bind(this)}/>
               </div> : "Loading"}>
             </Route>
+
             <Route path='/login' render={(props) =>
               <div>
                 <AppHeader {...props} user={this.state.user}/>
                 <Login {...props} stateChange={this.stateChange.bind(this)}/>
               </div>}>
             </Route>
+
+            <Route path='/signup' render={(props) =>
+              <div>
+                <AppHeader {...props} user={this.state.user}/>
+                <Signup {...props} stateChange={this.stateChange.bind(this)}/>
+              </div>}>
+            </Route>
+
             <Route path='/sauces/:filter?' render={(props) => 
               <div>
                 <AppHeader {...props} user={this.state.user}/>
@@ -100,6 +113,7 @@ class App extends React.Component {
                 <Sauces {...props} sauces={this.state.sauces}/>
               </div>}>
             </Route>
+
             <Route path='/detail/:sauceName' render={(props) => 
               this.state.sauces ? <div>
                 <AppHeader {...props} user={this.state.user}/>

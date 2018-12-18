@@ -18,7 +18,9 @@ class AppHeader extends React.Component{
             <h1>Awesome Sauce.<span>App</span></h1>
             {!this.props.user ? <h4><a href="/login">Login</a></h4> : `Welcome ${this.props.user.displayName}`}
             <br></br>
-            {this.props.user ? <button class="button" onClick={this.logOut.bind(this)}>Log Out</button> : ""}
+            {!this.props.user ? <h4><a href="/signup">Signup</a></h4> : ``}
+            <br></br>
+            {this.props.user ? <button className="button" onClick={this.logOut.bind(this)}>Log Out</button> : ""}
         </header>
         )
     }
